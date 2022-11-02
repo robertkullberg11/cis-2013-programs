@@ -2,7 +2,6 @@ var $ = function (id) {
     return document.getElementById(id);
 };
 
-switch (true) {
     var stringOutput = "";  //declares stringOutput inital value to be blank
 
     //define the individual troubleshooting tips per the chart
@@ -24,6 +23,7 @@ switch (true) {
     var boolRecognised = $("not_recognised").selected;  ////returns a value of true only when the not_recognized html id is selected from the dropdown menu
 
     //enter your code here and don't forget to send the output to the DOM
+    switch (true) {
      case boolPrinting === true && boolRedLight === true && boolRecognised === true:   
         stringOutput = stringMessage2 + “\n” + stringMessage3 + “\n” + stringMessage4;
         break;
@@ -48,8 +48,9 @@ switch (true) {
      default:
         stringOutput = stringMessage6;
         break;
+    }
 $("output").value = stringOutput;
-}
+
 
 window.onload = function () {
     $("troubleshoot").onclick = fixPrinter;
